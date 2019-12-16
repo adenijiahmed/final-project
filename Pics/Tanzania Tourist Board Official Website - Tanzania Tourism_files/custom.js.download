@@ -1,0 +1,196 @@
+/*-------------------------------------------------------------------------
+ * RENDIFY - Custom jQuery Scripts
+ * ----------------------------------------------------------------------*/
+ 
+jQuery.noConflict()(function ($) {
+$(document).ready(function ($) {
+
+/************** Responsive Navigation *********************/
+       var nav = $('.header');
+		$(window).scroll(function () { if ($(this).scrollTop() > 136) { nav.addClass('fixed'); } 
+		   else { nav.removeClass("fixed"); }
+		});
+
+		$('.nav li').mouseover(function(){ $(this).find('.popout').show() }) 
+		   .mouseout(function() { $(".nav .popout").hide();
+		});
+/************** /Responsive Navigation *********************/
+
+		$(".phonetip").tooltip({cssClass:"tooltip-red"});
+		$(".emailtip").tooltip({cssClass:"tooltip-red"});
+		$(".webtip").tooltip({cssClass:"tooltip-red"});
+		$(".faxtip").tooltip({cssClass:"tooltip-red"});
+		$(".mobiletip").tooltip({cssClass:"tooltip-red"});
+		$(".emailtip").tooltip({cssClass:"tooltip-red"});
+
+ 
+ /************** /Home Page Overmouse Alert *********************/
+
+		$('#holiday').hover(function(){
+			$('#holiday .hoverBg').css ('display', 'block');
+			$('.bannerText .defoult').hide();
+			$('.bannerText .holiday').show();
+		},function(){
+			$('#holiday .hoverBg').css ('display', 'none');
+			$('.bannerText .defoult').show();
+			$('.bannerText .holiday').hide();
+		});
+	
+		$('#business').hover(function(){
+			$('#business .hoverBg').css ('display', 'block');
+			$('.bannerText .defoult').hide();
+			$('.bannerText .business').show();
+		},function(){
+			$('#business .hoverBg').css ('display', 'none');
+			$('.bannerText .defoult').show();
+			$('.bannerText .business').hide();
+		});
+
+    $('#info').readmore({
+      moreLink: '<a href="#">Usage, examples, and options</a>',
+      collapsedHeight: 1000,
+      afterToggle: function(trigger, element, expanded) {
+        if(! expanded) { // The "Close" link was clicked
+          $('html, body').animate({scrollTop: $(element).offset().top}, {duration: 100});
+        }
+      }
+    });
+
+    $('article').readmore({speed: 500});
+
+	/************** FancyBox *********************/
+	$('.fancybox').fancybox({
+		padding: 5,
+		titlePosition: 'over'
+	});
+
+ 	$('.fancybox-media')
+		 .attr('rel', 'media-gallery')
+		 .fancybox({
+		 openEffect : 'none',
+		 closeEffect : 'none',
+	     prevEffect : 'none',
+		 nextEffect : 'none',
+ 		 arrows : false,
+		 helpers : {
+		 media : {},
+		 buttons : {}
+			  }
+	 });
+ 
+   $('.various').fancybox({
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: false,
+		width		: '90%',
+		height		: '78%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	 });
+   
+  /************** Bookmark *********************/
+
+	  //$('.bookmark_form').live('submit', function(event){ event.preventDefault();
+	  $.post( '/',
+	  $(this).serialize(), function(msg) {
+	  $(this).parent().append(msg);
+	   });
+	 });
+   
+/*----------------------------------------------------------*/
+/*              5 - NOTIFICATIONS BLOCK JQUER                */
+/*----------------------------------------------------------*/
+    $('.notification span.close-notification').click(function () {
+            $(this).parent().fadeOut(1000);
+        });
+        /*
+        $(".tooltip").tipTip({
+            defaultPosition: "bottom"
+        });
+         $(".tooltip.right").tipTip({
+            defaultPosition: "right"
+        });
+           $(".tooltip.left").tipTip({
+            defaultPosition: "left"
+        });
+*/
+/*------------------------------------------------------------*/
+/*             Contact Us Map                               */
+/*-------------------------------------------------------------*/
+	  /*$("#map3").gMap({ markers: [{ latitude: 47.670553, longitude: 9.588479, html: "Tettnang, Germany", popup: true },
+		                        { latitude: 47.670553, longitude: 9.848479, html: "Tettnang, Germany", popup: true },
+								{ latitude: 47.670553, longitude: 9.488479, html: "Tettnang, Germany", popup: true }], zoom: 6 
+       });
+  */
+/*------------------------------------------------------------*/
+/*              TTB Polls                                     */
+/*-------------------------------------------------------------*/
+
+   $('form[id*="vwm_polls_poll"]').submit(function(e) {
+    e.preventDefault();
+    var form = $(this);
+    var action = $(this).attr('action');
+    var id = $(this).attr('id') + '_img';
+
+    $.ajax({
+        type: 'POST',
+        url: action,
+        data: $(this).serialize(),
+        success: function(data) {
+            var chart = data.chart;
+            var img = $('<img />').attr('src', chart).attr('id', id).attr('alt', '');
+            $(form).find('fieldset').fadeOut('slow', function() {
+                $(form).append(img).hide().fadeIn('slow');
+            });
+        },
+        error: function(data) {
+            var data = $.parseJSON(data.responseText);
+            var xid = data.xid;
+            $(form).find('input[name="XID"]').val(xid);
+            $.each(data.errors, function(index, value) {
+                alert(value);
+            });
+        },
+        dataType: 'json'
+    });
+});
+
+   /************** Read More and Read Less *********************/
+   /************** Yahoo Weather *********************/
+ /*
+	// Specify the ZIP/location code and units (f or c)
+    var loc = 'INXX0059'; // or e.g. SPXX0050 // fro jaipur INXX0059
+    var locd = 'INXX0038'; // or e.g. SPXX0050 // fro jaipur INXX0059
+    var u = 'c';
+ 
+    var query = "SELECT item.condition FROM weather.forecast WHERE location='" + loc + "' AND u='" + u + "'";
+    var queryd = "SELECT item.condition FROM weather.forecast WHERE location='" + locd + "' AND u='" + u + "'";
+    var cacheBuster = Math.floor((new Date().getTime()) / 1200 / 1000);
+    var url = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + '&format=json&_nocache=' + cacheBuster;
+    var urld = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(queryd) + '&format=json&_nocache=' + cacheBuster;
+ 
+    window['wxCallback'] = function(data) {
+        var info = data.query.results.channel.item.condition;       
+        $('#wxTemp').html(info.temp + '&deg;' + (u.toUpperCase()));
+    };
+    window['wxCallbackd'] = function(data) {
+        var info = data.query.results.channel.item.condition;       
+        $('#wxTempd').html(info.temp + '&deg;' + (u.toUpperCase()));
+    };
+ 
+    $.ajax({
+        url: url,
+        dataType: 'jsonp',
+        cache: true,
+        jsonpCallback: 'wxCallback'
+    });
+    $.ajax({
+        url: urld,
+        dataType: 'jsonp',
+        cache: true,
+        jsonpCallback: 'wxCallbackd'
+    });
+ */ 
+});

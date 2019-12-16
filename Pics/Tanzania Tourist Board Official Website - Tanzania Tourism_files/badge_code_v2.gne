@@ -1,0 +1,41 @@
+var b_txt = '';
+
+// Write a warning for the developer
+b_txt+= '<!-- DEVELOPER WARNING: The Flickr badge code is likely to be deprecated, and we recommend changing to a new method to embed photo as soon as possible.  See https://www.flickr.com/api for information on how to access Flickr data. Thanks. -->';
+
+// write the badge
+	
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image1"><a href="https://www.flickr.com/photos/tanzaniatourism/18697666793/"><img src="https://live.staticflickr.com/3687/18697666793_4b728e7d5d_t.jpg" alt="A photo on Flickr" title="NGOZI CRATER (8)" height="67" width="100"></a></div>';
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image2"><a href="https://www.flickr.com/photos/tanzaniatourism/18581345973/"><img src="https://live.staticflickr.com/261/18581345973_0df6fcbed7_t.jpg" alt="A photo on Flickr" title="Kalambo Falls" height="67" width="100"></a></div>';
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image3"><a href="https://www.flickr.com/photos/tanzaniatourism/18581782573/"><img src="https://live.staticflickr.com/361/18581782573_140b68474b_t.jpg" alt="A photo on Flickr" title="Kalambo Falls" height="67" width="100"></a></div>';
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image4"><a href="https://www.flickr.com/photos/tanzaniatourism/18611065714/"><img src="https://live.staticflickr.com/484/18611065714_7bf1b57b5b_t.jpg" alt="A photo on Flickr" title="Dar-es-Salaam-Magogoni-Fish-Market-23" height="67" width="100"></a></div>';
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image5"><a href="https://www.flickr.com/photos/tanzaniatourism/18580510473/"><img src="https://live.staticflickr.com/403/18580510473_76875bfeba_t.jpg" alt="A photo on Flickr" title="Arusha, Clock Tower" height="75" width="100"></a></div>';
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image6"><a href="https://www.flickr.com/photos/tanzaniatourism/18581050784/"><img src="https://live.staticflickr.com/349/18581050784_6a7c4c4d1f_t.jpg" alt="A photo on Flickr" title="Ngorongoro Crater Zebras" height="56" width="100"></a></div>';
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image7"><a href="https://www.flickr.com/photos/tanzaniatourism/18698077944/"><img src="https://live.staticflickr.com/509/18698077944_0e65476850_t.jpg" alt="A photo on Flickr" title="Matema Shore" height="67" width="100"></a></div>';
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image8"><a href="https://www.flickr.com/photos/tanzaniatourism/18606809624/"><img src="https://live.staticflickr.com/3669/18606809624_77f0e211aa_t.jpg" alt="A photo on Flickr" title="Dar-es-Salaam-Samora-Avenue-12" height="75" width="100"></a></div>';
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image9"><a href="https://www.flickr.com/photos/tanzaniatourism/18579352524/"><img src="https://live.staticflickr.com/284/18579352524_b5cea529a6_t.jpg" alt="A photo on Flickr" title="Kalambo Falls" height="67" width="100"></a></div>';
+	
+		 	 	 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image10"><a href="https://www.flickr.com/photos/tanzaniatourism/18582993473/"><img src="https://live.staticflickr.com/383/18582993473_bf9336861a_t.jpg" alt="A photo on Flickr" title="Ngorongoro Crater Zebras" height="67" width="100"></a></div>';
+
+b_txt += '<span style="position:absolute;left:-999em;top:-999em;visibility:hidden" class="flickr_badge_beacon"><img src="https://geo.yahoo.com/p?s=792600102&t=3900537bc3e1f65512ef424d593b924e&r=https%3A%2F%2Fwww.tanzaniatourism.go.tz%2Fen&fl_ev=0&lang=en&intl=us" width="0" height="0" alt="" /></span>';
+
+document.write(b_txt);
