@@ -1,0 +1,51 @@
+body{
+    text-align:center;
+    
+}
+.header-content1 {
+    background-image:url("Pics/Africa Animal/Zebra.jpg") ;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    height: 665px;
+   }
+
+.album_container{
+    width: 400px;
+    height: 500px;
+    margin:auto;
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    
+    
+}
+.album_container img{
+    width: 400px;
+    height: 500px;
+    display: inline-block;
+    
+    
+}
+.album_container .prev{
+    background-color: black;
+    color: white;
+    position: absolute;
+    text-decoration: none;
+    width: 50px;
+    top: 230px;
+}
+.album_container .next{
+    background-color: black;
+    color: white;
+    position: absolute;
+    text-decoration: none;
+    width: 50px;
+    top: 230px;
+    right: 0;
+}
+.img_parent{
+    position: relative;
+    height: 100%;
+    margin-top: 10%;
+}

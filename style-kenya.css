@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+}
+
+
+.header-content1 {
+    background-image:url("Pics/Kenya img/d1db618c53c697a0f9c3d255b50deb19d0d65195.jpg") ;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    height: 665px;
+   }
+h1{
+    /*width: 1500px;*/
+    height: 60px;
+    padding-top: 150px;
+}
+
+div.p, p {
+    font-size: 22px;
+    line-height: 1.59;
+    font-weight: 400;
+    margin-top: 0;
+    word-break: keep-all;
+    color: #4d4d4d;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.narative{
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 25;
+}
+.description{
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+}

@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+}
+
+
+.header-content1 {
+    background-image:url("Pics/Nig img/Coconut-Beach.jpg") ;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    height: 665px;
+   }
+
+h1{
+    /*width: 1500px;*/
+    height: 60px;
+    padding-top: 10%;
+    color: aliceblue;
+}
+
+.intro {
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.59;
+    font-size: 25;
+    color: aliceblue;
+    font-family: Barlow Condensed,Helvetica,Arial,sans-serif;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 0 1 0 1;
+    
+}
+.description{
+    font-size: 20px;
+    padding: 20 2 0 2;
+}
+
+.w3-margin-top {
+    margin-top: 16px!important;
+}
+.w3-row-padding, .w3-row-padding>.w3-half, .w3-row-padding>.w3-third, .w3-row-padding>.w3-twothird, .w3-row-padding>.w3-threequarter, .w3-row-padding>.w3-quarter, .w3-row-padding>.w3-col {
+    padding: 0 8px;
+}
+div {
+    display: block;
+}
+.container{
+    display: flex;
+}
+.flex-container{
+    display: flex;
+}
+.content2 {
+    width: 100%;
+    list-style-image: block;
+    vertical-align: center;
+    text-align: center;
+  
+  }
+  .content2-child{
+    padding-left: 5%;
+    padding-right: 5%;
+    /*width: 1000px;
+    height: 320px;*/
+  }
